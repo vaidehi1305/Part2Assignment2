@@ -1,0 +1,81 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lending Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <h2 align="center" text-decoration="underline">LendingClub: Accept/Reject Loans</h2><hr/>
+</head>
+<body>
+
+<div class="container">
+    <span>PLEASE fill out each section COMPLETELY.</span><br /><hr/>
+
+    <form class="test" role="form" action="#" th:action="@{/classification}" th:object="${classification}" method="post">
+        <div class="form-group">
+            <label  for="Amount_Requested">Amount Requested :</label>
+            <input type="number" step="any" class="form-control" id="Amount_Requested" placeholder="Enter loan amount" th:field="*{Amount_Requested}" />
+        </div>
+
+        <div class="form-group">
+            <label for="Employment_Length"> Employment Length :</label>
+            <div class="form-group">
+                <select class="form-control" id="Employment_Length" th:field="*{Employment_Length}">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="Debt-To-Income-Ratio"> Debt To Income Ratio: </label>
+            <input type="number" step="any" class="form-control" id="Debt-To-Income-Ratio" placeholder="Enter your Debt-to-Income-Ratio" th:field="*{Debt_To_Income_Ratio}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="Fico_Score"> Fico Score:</label>
+            <input type="number" step="any" class="form-control" id="Fico_Score" placeholder="Enter you Fico Score in range 300-850" th:field="*{Fico_Score}" />
+        </div>
+
+        <div class="form-group">
+            <label for="zip_code"> Zip Code :</label>
+            <input type="number" step="any" class="form-control" id="zip_code" placeholder="Enter your zip code" th:field="*{zip_code}" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+<script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+    body { background: lightblue !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
+</body>
+</html>

@@ -1,0 +1,166 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lending Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <h2 align="center" text-decoration="underline">LendingClub: Accept/Reject Loans</h2><hr/>
+</head>
+<body>
+
+<div class="container">
+    <span>PLEASE fill out each section COMPLETELY.</span><br /><hr/>
+
+    <form role="form" action="#" th:action="@{/regression}" th:object="${intRate}" method="post">
+        <div class="form-group">
+            <label  for="loan_amnt">Amount Requested :</label>
+            <input type="number" step="any" class="form-control" id="loan_amnt" placeholder="Enter loan amount" th:field="*{loan_amnt}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="term"> Term :</label>
+            <div class="form-group">
+                <select class="form-control" id="term" th:field="*{term}">
+                    <option value="36">36</option>
+                    <option value="60">60</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="emp_length"> Employment Length :</label>
+            <div class="form-group">
+                <select class="form-control" id="emp_length" th:field="*{emp_length}">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="installment"> Installment: </label>
+            <input type="number" step="any" class="form-control" id="installment" placeholder="Enter your monthly payments" th:field="*{installment}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="ficoMean"> Fico Score:</label>
+            <input type="number" step="any" class="form-control" id="ficoMean" placeholder="Enter you Fico Score in range 300-850" th:field="*{ficoMean}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose"> Purpose :</label>
+            <div class="form-group">
+                <select class="form-control" id="purpose" th:field="*{purpose}">
+                    <option value="credit_card">credit_card</option>
+                    <option value="car">car</option>
+                    <option value="small_business">small_business</option>
+                    <option value="wedding">wedding</option>
+                    <option value="debt_consolidation">debt_consolidation</option>
+                    <option value="home_improvement">home_improvement</option>
+                    <option value="major_purchase">major_purchase</option>
+                    <option value="medical">medical</option>
+                    <option value="moving">moving</option>
+                    <option value="vacation">vacation</option>
+                    <option value="house">house</option>
+                    <option value="renewable_energy">renewable_energy</option>
+                    <option value="educational">educational</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="loan_status"> Loan Status :</label>
+            <div class="form-group">
+                <select class="form-control" id="loan_status" th:field="*{loan_status}">
+                    <option value="Fully Paid">Fully Paid</option>
+                    <option value="Charged Off">Charged Off</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="annual_inc"> Annual Income: </label>
+            <input type="number" step="any" class="form-control" id="annual_inc" placeholder="Enter your Annual Income" th:field="*{annual_inc}" />
+        </div>
+
+        <div class="form-group">
+            <label for="home_ownership"> Home Ownership :</label>
+            <div class="form-group">
+                <select class="form-control" id="home_ownership" th:field="*{home_ownership}">
+                    <option value="OWN">OWN</option>
+                    <option value="RENT">RENT</option>
+                    <option value="MORTGAGE">MORTGAGE</option>
+                    <option value="OTHER">OTHER</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="open_acc"> Open acc :</label>
+            <input type="number" class="form-control" id="open_acc" placeholder="Enter number of open credit lines" th:field="*{open_acc}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="revol_util"> revol_util :</label>
+            <input type="number" step="any" class="form-control" id="revol_util" placeholder="Enter your revolving line utilization rate" th:field="*{revol_util}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="inq_Last_6mnths"> inq_last_6mnths :</label>
+            <input type="number" step="any" class="form-control" id="inq_Last_6mnths" placeholder="Credit inquiries in the last 6 months" th:field="*{inq_last_6mths}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="credit_history"> Credit History :</label>
+            <input type="number" step="any" class="form-control" id="credit_history" placeholder="Credit History" th:field="*{credit_history}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="addr_state"> Address State :</label>
+            <input type="number" step="any" class="form-control" id="addr_state" placeholder="Address State" th:field="*{addr_state}"/>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+
+
+    </form><hr/>
+
+    <div class="result">
+        <h2> Interest Rate :</h2>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+    body { background: lightblue !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+
+</style>
+</body>
+</html>
